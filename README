@@ -1,0 +1,16 @@
+This is a python module that plot bifurcation diagrams created by AUTO-07p (http://cmvl.cs.concordia.ca/auto/) in the ipython interactive notebook. I did this because the plotting modules that come with AUTO-07p use a different matplotlib backend to that used by the ipython notebook.
+
+usage
+in terminal:
+ipython notebook --pylab inline
+
+import auto as a
+#import as 'a' or something to avoid conflict with   
+import AUTOgrapherNB as plt
+
+#the use AUTO-07p as normal
+#the to plot solution: plt.plot(auto_soln,**kwargs) 
+#kwargs for plotting limits are xlim=[0.,0.1], ylim=[-1.,1.]
+# for axis x='P1', y='U4'
+# where 'P1' = PAR(1), 'U1'=U(1), 'T1'=PERIOD, 'L2'=L2-NORM
+ 
