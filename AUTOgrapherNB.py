@@ -139,3 +139,60 @@ def plotb(r2, **kwargs):
     for i,sp in enumerate(special):
         ax.plot(sp[1],sp[2],ls='None',marker='x',color='k',markersize=3)
         ax.text(sp[1],sp[2],sp[0])
+
+def plots(sol, **kwargs):
+    colors=['b', 'g', 'r', 'c', 'm', 'y', 'k']
+    fig=plt.figure()
+    fig.clf()
+    ax=fig.add_subplot(111)
+
+    s=parseS.parseS(sol)
+
+    if kwargs.get('xlim'):
+        ax.set_xlim(kwargs.get('xlim'))
+    if kwargs.get('ylim'):
+        ax.set_ylim(kwargs.get('ylim'))   
+
+    if kwargs.get('x'):
+        x=kwargs.get('x')
+        numx=re.sub('\D', '',x)
+        param=x.strip(numx)
+        if param=='U':
+            paramx='U'
+        if param=='t':
+            paramx='t'
+    else:
+        paramx='t'
+
+    if kwargs.get('y'):
+        y=kwargs.get('y')
+        numy=re.sub('\D', '',y)
+        param=y.strip(numy)
+        if param=='U':
+            paramy='U'
+        if param=='t':
+            paramy='t'
+    else:
+        paramy='U'
+        numy=1
+
+    x=[]
+    y=[]
+    
+    for i in range(len(s)):
+        sdata=s[i]
+        if paramx=='t':
+            xvalue=sdata['t']
+        else:
+            data=sdata['u']
+            xvalue=sdata[int(numx)-1]
+        if paramy=='t':
+            yvalue=sdata['t']
+        else:
+            data=sdata['u']
+            yvalue=sdata[int(numy)-1]
+
+        x.append(xvalue)
+        y.append(yvalue)
+
+    ax.plot(x,y,color='k',ls='solid')
