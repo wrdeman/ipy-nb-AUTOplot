@@ -14,6 +14,7 @@ the to plot solution: plt.plotb(auto_soln,**kwargs)
 kwargs for plotting limits are xlim=[0.,0.1], ylim=[-1.,1.]
 for axis x='P1', y='U4'
 where 'P1' = PAR(1), 'U1'=U(1), 'T1'=PERIOD, 'L2'=L2-NORM
+for stability: stable=='True'
 
 for solutions use plots: plt.plots(r2("PD2"),**kwargs)
 current kwargs are x,y ='U1' etc and xlim and ylim as before
