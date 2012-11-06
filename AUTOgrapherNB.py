@@ -20,6 +20,8 @@ def plotb(r2, **kwargs):
     ap=n1b[0]
     c=parseC.parseC(n1b[0]) 
 
+    xlT=False
+    ylT=False
     if kwargs.get('xlim'):
         ax.set_xlim(kwargs.get('xlim'))
         xl=kwargs.get('xlim')
@@ -28,6 +30,7 @@ def plotb(r2, **kwargs):
         ax.set_ylim(kwargs.get('ylim'))
         yl=kwargs.get('ylim')   
         ylT=True
+    
     if kwargs.get('x'):
         x=kwargs.get('x')
         numx=re.sub('\D', '',x)
