@@ -18,3 +18,6 @@ for stability: stable=='True'
 
 for solutions use plots: plt.plots(r2("PD2"),**kwargs)
 current kwargs are x,y ='U1' etc and xlim and ylim as before
+
+take x,y data for plotting in standard notebook: plt.datab(x,y) where as above we use the kwargs. datab will return two arrays
+usage x,y=plt.datab(x='P1',y='P2')
