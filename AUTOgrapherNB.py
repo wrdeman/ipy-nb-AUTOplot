@@ -129,7 +129,7 @@ def plotb(r2, **kwargs):
         try:
             xvalue=c[paramx]
         except KeyError:
-            print paramx
+#            print paramx
             xvalue=c['MAX U('+numx+')']
         try:
             yvalue=c[paramy]
@@ -329,7 +329,7 @@ def datab(r2, **kwargs):
         try:
             xvalue=c[paramx]
         except KeyError:
-            print paramx
+#            print paramx
             xvalue=c['MAX U('+numx+')']
         try:
             yvalue=c[paramy]
